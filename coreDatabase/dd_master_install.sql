@@ -13,26 +13,13 @@ WHENEVER SQLERROR EXIT
 
 @@dd_create_schema.sql
 
-define LOGGER_DIRECTORY=LOGGER_DIRECTORY
-accept LOGGER_DIRECTORY char default &LOGGER_DIRECTORY prompt 'Name of the directory for the logger scripts       [&LOGGER_DIRECTORY] :'
-@@&LOGGER_DIRECTORY/create_user.sql dd_logger users temp dd
-
-
-CONNECT &LOGGER_USER/&PASSWD
-@@&LOGGER_DIRECTORY/logger_install.sql
-@@&LOGGER_DIRECTORY/scripts/grant_logger_to_user.sql DD
-@@&LOGGER_DIRECTORY/scripts/grant_logger_to_user.sql DD_NON_EBR
-exec logger.set_level(logger.g_error);
-
 
 CONNECT dd_non_ebr/dd
-@@&LOGGER_DIRECTORY/scripts/create_logger_synonyms.sql DD_LOGGER
 @@dd_non_ebr_schema/dd_non_ebr_user_payment_type.typ
 @@dd_non_ebr_schema/dd_non_ebr_setup_aq.sql
 
 
 CONNECT dd/dd
-@@&LOGGER_DIRECTORY/scripts/create_logger_synonyms.sql DD_LOGGER
 --Create Tables
 @@dd_schema/dd_dinosaurs.tbl
 @@dd_schema/dd_locations.tbl

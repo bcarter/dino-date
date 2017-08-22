@@ -49,7 +49,7 @@ BEGIN
   END;
   EXCEPTION
     WHEN OTHERS THEN
-      logger.log_error(SQLCODE || ' : ' || SUBSTR(SQLERRM, 1, 200), 'Dropping AQ Objects');
+      -- logger.log_error(SQLCODE || ' : ' || SUBSTR(SQLERRM, 1, 200), 'Dropping AQ Objects');
       RAISE;
 END;
 /
@@ -109,7 +109,7 @@ BEGIN
       grant_option  =>      TRUE);
   EXCEPTION
     WHEN OTHERS THEN
-      logger.log_error(SQLCODE || ' : ' || SUBSTR(SQLERRM, 1, 200), 'Creating AQ Objects');
+      -- logger.log_error(SQLCODE || ' : ' || SUBSTR(SQLERRM, 1, 200), 'Creating AQ Objects');
       RAISE;
 END;
 /
