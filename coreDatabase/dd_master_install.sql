@@ -10,7 +10,6 @@
 WHENEVER SQLERROR EXIT
 
 --CONNECT sys/dd
-cd coreDatabase
 
 @@dd_create_schema.sql
 
