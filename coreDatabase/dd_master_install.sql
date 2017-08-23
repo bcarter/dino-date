@@ -11,6 +11,8 @@ WHENEVER SQLERROR EXIT
 
 --CONNECT sys/dd
 
+ho pwd
+
 @@dd_create_schema.sql
 
 
