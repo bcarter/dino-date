@@ -31,5 +31,5 @@ app.use(morgan('combined')); //logger
 
 app.listen(config.port, function() {
     console.log('Web server listening on localhost:' + config.port);
+    console.log('Test Message');
 });
-
