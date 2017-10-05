@@ -35,6 +35,19 @@ CONNECT dd/dd
 --Create Synonyms
 @@dd_schema/dd_user_payment_type.syn
 
+--Create Triggers
+@@dd_schema/dd_dinosaurs_bir.trg
+@@dd_schema/dd_dinosaurs_bur.trg
+@@dd_schema/dd_locations_bir.trg
+@@dd_schema/dd_locations_bur.trg
+@@dd_schema/dd_members_bir.trg
+@@dd_schema/dd_members_bur.trg
+@@dd_schema/dd_messages_bir.trg
+@@dd_schema/dd_messages_bur.trg
+@@dd_schema/dd_templates_bur.trg
+@@dd_schema/dd_settings_bir.trg
+@@dd_schema/dd_settings_bur.trg
+
 --Create Functions
 @@dd_schema/dd_dino_id_from_name.fnc
 @@dd_schema/dd_degree_to_sdo.fnc
@@ -56,21 +69,10 @@ CONNECT dd/dd
 @@dd_schema/dd_search_pkg.pkb
 @@dd_schema/dd_text_uds_pkg.pkb
 
---Create Triggers
-@@dd_schema/dd_dinosaurs_bur.trg
-@@dd_schema/dd_dinosours_bir.trg
-@@dd_schema/dd_locations_bir.trg
-@@dd_schema/dd_locations_bur.trg
-@@dd_schema/dd_members_bir.trg
-@@dd_schema/dd_members_bur.trg
-@@dd_schema/dd_messages_bir.trg
-@@dd_schema/dd_messages_bur.trg
-@@dd_schema/dd_templates_bur.trg
-@@dd_schema/dd_settings_bir.trg
-@@dd_schema/dd_settings_bur.trg
-
 --Load Data
+set define off
 @@dd_schema/dd_load_data.sql
+set define on
 
 --Setup Text Search
 @@dd_schema/dd_setup_text_search.sql
